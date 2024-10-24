@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 채팅방</title>
+    <!-- Keycloak JS 어댑터 추가 -->
+    <script src="./keycloak.js"></script>
+    <style>
+        .container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.chat-room-list {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.room-list .room {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    position: relative; /* Ensure the unread count is positioned correctly */
+}
+
+.room-list .room:hover {
+    background-color: #f0f0f0;
+}
+
+.room-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.room-number {
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.last-message {
+    font-size: 14px;
+    color: #888;
+}
+
+.last-message-time {
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* Unread count styling */
+.unread-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; /* Set a fixed width */
+    height: 24px; /* Set a fixed height */
+    background-color: #ff5c5c; /* Background color for unread count */
+    color: white;
+    border-radius: 50%; /* Make it a circle */
+    font-size: 14px; /* Font size for the unread count */
+    font-weight: bold;
+    position: absolute; /* Position it relative to the room element */
+    top: 38px; /* Adjust top positioning */
+    right: 10px; /* Adjust right positioning */
+    overflow: hidden; /* Ensure text does not overflow */
+    text-align: center; /* Center the text inside */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+    </style>
+    <!-- roomList.js 를 불러오는 스크립트 -->
+    <script src="./roomList.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 채팅방 리스트 영역 -->
+        <div class="chat-room-list">
+            <div class="header">
+                <h1>채팅방 목록</h1>
+            </div>
+            <div id="roomList" class="room-list">
+
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
